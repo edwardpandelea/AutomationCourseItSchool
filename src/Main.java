@@ -57,7 +57,5 @@ public class Main {
         String message = "Bun venit, ";
         System.out.println(message + name);
 
-
-
     }
 }
