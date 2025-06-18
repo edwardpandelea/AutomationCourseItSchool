@@ -1,1 +1,1 @@
-# Automation Project ItSchool 
+# Automation Course ItSchool 
