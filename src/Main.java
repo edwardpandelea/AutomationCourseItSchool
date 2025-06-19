@@ -56,6 +56,5 @@ public class Main {
 //      Creează o variabilă String și afișeaz-o cu un mesaj personalizat (ex: "Bun venit, Andrei!").
         String message = "Bun venit, ";
         System.out.println(message + name);
-        System.out.println("test");
     }
 }
