@@ -3,7 +3,7 @@ name: Update README on Merge
 on:
   push:
     branches:
-      - master  # Runs only when a branch is merged into main
+      - main
 
 permissions:
   contents: write
@@ -16,17 +16,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Get last merged branch name and changed files
-        id: info
+      - name: Extract branch name and changed files
+        id: extract
         run: |
-          COMMIT_MSG=$(git log -1 --pretty=%B)
-          BRANCH_NAME=$(echo "$COMMIT_MSG" | sed -n 's/Merge pull request.*from \(.*\)/\1/p')
+          echo "branch_name=${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}" >> $GITHUB_OUTPUT
 
-          MODIFIED_FILES=$(git diff-tree --no-commit-id --name-only -r HEAD)
-          
-          echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          FILES=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})
           echo "files<<EOF" >> $GITHUB_OUTPUT
-          echo "$MODIFIED_FILES" >> $GITHUB_OUTPUT
+          echo "$FILES" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Set up Git
@@ -37,18 +34,20 @@ jobs:
       - name: Update README.md
         run: |
           REPO_URL="https://github.com/${{ github.repository }}"
+          COMMIT_SHA="${{ github.sha }}"
+
           echo "### Last Merge Summary" > README.md
+          echo "### **Branch:** ${{ steps.extract.outputs.branch_name }}" >> README.md
           echo "" >> README.md
-          echo "- **Branch:** ${{ steps.info.outputs.branch_name }}" >> README.md
           echo "- **Merged At:** $(date -u +"%Y-%m-%d %H:%M UTC")" >> README.md
           echo "- **Changed Files:**" >> README.md
 
           while IFS= read -r file; do
-            echo "  - [\`$file\`]($REPO_URL/blob/main/$file)" >> README.md
-          done <<< "${{ steps.info.outputs.files }}"
+            echo "  - [\`$file\`]($REPO_URL/blob/$COMMIT_SHA/$file)" >> README.md
+          done <<< "${{ steps.extract.outputs.files }}"
 
       - name: Commit and push
         run: |
           git add README.md
-          git commit -m "Update README with merge info [skip ci]" || echo "No changes to commit"
+          git commit -m "Update README with merged branch info [skip ci]" || echo "Nothing to commit"
           git push
