@@ -5,48 +5,63 @@ on:
     branches:
       - master
 
-permissions:
-  contents: write
-
 jobs:
   update-readme:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Extract branch name and changed files
+      - name: Set up GitHub CLI
+        uses: cli/cli-action@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Get latest merged PR
+        id: pr
+        run: |
+          PR_JSON=$(gh pr list --state merged --base master --limit 1 --json headRefName,url,number)
+          echo "PR_JSON=$PR_JSON" >> $GITHUB_ENV
+
+      - name: Extract PR Info
         id: extract
         run: |
-          echo "branch_name=${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}" >> $GITHUB_OUTPUT
+          echo "$PR_JSON" | jq -r '.[0].headRefName' > branch.txt
+          echo "$PR_JSON" | jq -r '.[0].number' > pr_number.txt
 
-          FILES=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})
-          echo "files<<EOF" >> $GITHUB_OUTPUT
-          echo "$FILES" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+          BRANCH=$(cat branch.txt)
+          PR_NUMBER=$(cat pr_number.txt)
 
-      - name: Set up Git
+          echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+          echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
+
+      - name: Get changed files
+        id: changed
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          FILES=$(gh pr view ${{ steps.extract.outputs.pr_number }} --json files -q '.files[].path')
+          echo "$FILES" > files.txt
 
       - name: Update README.md
         run: |
-          REPO_URL="https://github.com/${{ github.repository }}"
-          COMMIT_SHA="${{ github.sha }}"
+          echo "## Merged Branch: ${{ steps.extract.outputs.branch }}" > temp.md
+          echo "" >> temp.md
+          echo "### Files Changed:" >> temp.md
 
-          echo "### ${{ steps.extract.outputs.branch_name }}" >> README.md
-          echo "" >> README.md
-          echo " - **Merged At:** $(date -u +"%Y-%m-%d %H:%M EEST")" >> README.md
-          echo " - **Changed Files:**" >> README.md
+          REPO_URL="https://github.com/${{ github.repository }}/blob/master"
 
-          while IFS= read -r file; do
-            echo "  - [\`$file\`]($REPO_URL/blob/$COMMIT_SHA/$file)" >> README.md
-          done <<< "${{ steps.extract.outputs.files }}"
+          while read file; do
+            echo "- [$file]($REPO_URL/$file)" >> temp.md
+          done < files.txt
 
-      - name: Commit and push
+          echo "" >> temp.md
+          cat README.md >> temp.md
+          mv temp.md README.md
+
+      - name: Commit and push changes
         run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git commit -m "Update README with merged branch info [skip ci]" || echo "Nothing to commit"
+          git commit -m "Update README with merged branch info"
           git push
