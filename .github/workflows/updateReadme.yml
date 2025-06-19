@@ -10,58 +10,57 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up GitHub CLI
-        uses: cli/cli-action@v2
+      - name: Set up Node (required for gh CLI auth)
+        uses: actions/setup-node@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          node-version: 18
 
-      - name: Get latest merged PR
-        id: pr
+      - name: Install GitHub CLI
         run: |
-          PR_JSON=$(gh pr list --state merged --base master --limit 1 --json headRefName,url,number)
-          echo "PR_JSON=$PR_JSON" >> $GITHUB_ENV
+          sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+          sudo apt-add-repository https://cli.github.com/packages
+          sudo apt update
+          sudo apt install gh -y
 
-      - name: Extract PR Info
-        id: extract
+      - name: Authenticate GitHub CLI
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "$PR_JSON" | jq -r '.[0].headRefName' > branch.txt
-          echo "$PR_JSON" | jq -r '.[0].number' > pr_number.txt
+          echo "${GH_TOKEN}" | gh auth login --with-token
 
-          BRANCH=$(cat branch.txt)
-          PR_NUMBER=$(cat pr_number.txt)
-
-          echo "branch=$BRANCH" >> $GITHUB_OUTPUT
-          echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
-
-      - name: Get changed files
-        id: changed
+      - name: Get latest merged PR info
+        id: pr_info
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          FILES=$(gh pr view ${{ steps.extract.outputs.pr_number }} --json files -q '.files[].path')
-          echo "$FILES" > files.txt
+          PR_JSON=$(gh pr list --state merged --base master --limit 1 --json headRefName,number,files)
+          echo "$PR_JSON" > pr.json
+          echo "BRANCH_NAME=$(jq -r '.[0].headRefName' pr.json)" >> $GITHUB_ENV
+          echo "PR_NUMBER=$(jq -r '.[0].number' pr.json)" >> $GITHUB_ENV
+          jq -r '.[0].files[].path' pr.json > changed_files.txt
 
       - name: Update README.md
         run: |
-          echo "## Merged Branch: ${{ steps.extract.outputs.branch }}" > temp.md
-          echo "" >> temp.md
-          echo "### Files Changed:" >> temp.md
-
+          echo "## Merged Branch: $BRANCH_NAME" > update.md
+          echo "" >> update.md
+          echo "### Files Changed:" >> update.md
           REPO_URL="https://github.com/${{ github.repository }}/blob/master"
 
           while read file; do
-            echo "- [$file]($REPO_URL/$file)" >> temp.md
-          done < files.txt
+            echo "- [$file]($REPO_URL/$file)" >> update.md
+          done < changed_files.txt
 
-          echo "" >> temp.md
-          cat README.md >> temp.md
-          mv temp.md README.md
+          echo "" >> update.md
+          cat README.md >> update.md
+          mv update.md README.md
 
-      - name: Commit and push changes
+      - name: Commit and push README.md update
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git commit -m "Update README with merged branch info"
+          git commit -m "Update README after merging branch $BRANCH_NAME"
           git push
