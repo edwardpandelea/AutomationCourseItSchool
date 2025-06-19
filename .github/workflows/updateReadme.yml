@@ -38,8 +38,8 @@ jobs:
 
           echo "### ${{ steps.extract.outputs.branch_name }}" >> README.md
           echo "" >> README.md
-          echo "**Merged At:** $(date -u +"%Y-%m-%d %H:%M EEST")" >> README.md
-          echo "**Changed Files:**" >> README.md
+          echo " - **Merged At:** $(date -u +"%Y-%m-%d %H:%M EEST")" >> README.md
+          echo " - **Changed Files:**" >> README.md
 
           while IFS= read -r file; do
             echo "  - [\`$file\`]($REPO_URL/blob/$COMMIT_SHA/$file)" >> README.md
