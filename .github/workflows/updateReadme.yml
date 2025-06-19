@@ -1,6 +1,9 @@
-name: Update README
+name: Update README on Merge
 
-on: [push]
+on:
+  push:
+    branches:
+      - main  # Runs only when a branch is merged into main
 
 permissions:
   contents: write
@@ -10,19 +13,42 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Get last merged branch name and changed files
+        id: info
+        run: |
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+          BRANCH_NAME=$(echo "$COMMIT_MSG" | sed -n 's/Merge pull request.*from \(.*\)/\1/p')
+
+          MODIFIED_FILES=$(git diff-tree --no-commit-id --name-only -r HEAD)
+          
+          echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          echo "$MODIFIED_FILES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Set up Git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Modify README
-        run: echo "## ${{ github.ref_name }} " >> README.md
+      - name: Update README.md
+        run: |
+          REPO_URL="https://github.com/${{ github.repository }}"
+          echo "### Last Merge Summary" > README.md
+          echo "" >> README.md
+          echo "- **Branch:** ${{ steps.info.outputs.branch_name }}" >> README.md
+          echo "- **Merged At:** $(date -u +"%Y-%m-%d %H:%M UTC")" >> README.md
+          echo "- **Changed Files:**" >> README.md
 
-      - name: Commit and push changes
+          while IFS= read -r file; do
+            echo "  - [\`$file\`]($REPO_URL/blob/main/$file)" >> README.md
+          done <<< "${{ steps.info.outputs.files }}"
+
+      - name: Commit and push
         run: |
           git add README.md
-          git commit -m "Update README [skip ci]" || echo "No changes to commit"
+          git commit -m "Update README with merge info [skip ci]" || echo "No changes to commit"
           git push
