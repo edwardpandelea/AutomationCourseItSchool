@@ -13,17 +13,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Node (required for gh CLI auth)
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-
-      - name: Install GitHub CLI
+      - name: Install GitHub CLI manually
         run: |
-          sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-          sudo apt-add-repository https://cli.github.com/packages
-          sudo apt update
-          sudo apt install gh -y
+          curl -fsSL -o gh.deb https://github.com/cli/cli/releases/latest/download/gh_2.49.0_linux_amd64.deb
+          sudo dpkg -i gh.deb
+          gh --version
 
       - name: Authenticate GitHub CLI
         env:
