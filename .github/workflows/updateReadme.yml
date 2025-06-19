@@ -19,11 +19,11 @@ jobs:
           sudo dpkg -i gh.deb
           gh --version
 
-      - name: Authenticate GitHub CLI
+      - name: Check GitHub CLI Auth Status
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "${GH_TOKEN}" | gh auth login --with-token
+            gh auth status
 
       - name: Get latest merged PR info
         id: pr_info
