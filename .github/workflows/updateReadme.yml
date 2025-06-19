@@ -38,7 +38,7 @@ jobs:
 
       - name: Update README.md
         run: |
-          echo "## Merged Branch: $BRANCH_NAME" > update.md
+          echo "## $BRANCH_NAME" > update.md
           echo "" >> update.md
           echo "### Files Changed:" >> update.md
           REPO_URL="https://github.com/${{ github.repository }}/blob/master"
