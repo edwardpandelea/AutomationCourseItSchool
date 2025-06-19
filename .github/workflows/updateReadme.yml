@@ -3,7 +3,7 @@ name: Update README on Merge
 on:
   push:
     branches:
-      - main  # Runs only when a branch is merged into main
+      - master  # Runs only when a branch is merged into main
 
 permissions:
   contents: write
