@@ -81,19 +81,7 @@ public class Course3 {
         System.out.println("=====================4=====================");
         char ch = 'c';
         switch (ch){
-            case 'a':
-                System.out.println("Vocala: " + ch);
-                break;
-            case 'e':
-                System.out.println("Vocala: " + ch);
-                break;
-            case 'i':
-                System.out.println("Vocala: " + ch);
-                break;
-            case 'o':
-                System.out.println("Vocala: " + ch);
-                break;
-            case 'u':
+            case 'a', 'e', 'i', 'o', 'u':
                 System.out.println("Vocala: " + ch);
                 break;
             default:
