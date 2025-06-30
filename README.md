@@ -1,3 +1,10 @@
+## Course4
+
+### Files Changed:
+- [exemplu.txt](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/exemplu.txt)
+- [file.txt](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/file.txt)
+- [src/Course4.java](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/src/Course4.java)
+
 ## Course3
 
 ### Files Changed:
