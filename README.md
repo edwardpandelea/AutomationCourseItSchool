@@ -1,3 +1,8 @@
+## Course6
+
+### Files Changed:
+- [src/Course6.java](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/src/Course6.java)
+
 ## Course5
 
 ### Files Changed:
