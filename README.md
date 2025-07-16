@@ -1,3 +1,14 @@
+## Course8
+
+### Files Changed:
+- [src/Course8/Angajat.java](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/src/Course8/Angajat.java)
+- [src/Course8/ContBancar.java](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/src/Course8/ContBancar.java)
+- [src/Course8/Contor.java](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/src/Course8/Contor.java)
+- [src/Course8/Factura.java](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/src/Course8/Factura.java)
+- [src/Course8/Main.java](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/src/Course8/Main.java)
+- [src/Course8/Produs.java](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/src/Course8/Produs.java)
+- [src/Course8/RezervareHotel.java](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/src/Course8/RezervareHotel.java)
+
 ## Course7
 
 ### Files Changed:
