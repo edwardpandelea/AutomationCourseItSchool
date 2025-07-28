@@ -1,3 +1,8 @@
+## Course11
+
+### Files Changed:
+- [AutomationSelenium/pom.xml](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/pom.xml)
+
 ## Course9
 
 ### Files Changed:
