@@ -1,6 +1,22 @@
 ## Course11
 
 ### Files Changed:
+- [.idea/compiler.xml](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/.idea/compiler.xml)
+- [.idea/encodings.xml](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/.idea/encodings.xml)
+- [.idea/jarRepositories.xml](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/.idea/jarRepositories.xml)
+- [.idea/misc.xml](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/.idea/misc.xml)
+- [AutomationSelenium/pom.xml](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/pom.xml)
+- [AutomationSelenium/src/test/java/BStackDemo.java](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/src/test/java/BStackDemo.java)
+- [AutomationSelenium/target/AutomationSelenium-1.0-SNAPSHOT.jar](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/target/AutomationSelenium-1.0-SNAPSHOT.jar)
+- [AutomationSelenium/target/maven-archiver/pom.properties](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/target/maven-archiver/pom.properties)
+- [AutomationSelenium/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst)
+- [AutomationSelenium/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst)
+- [AutomationSelenium/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst)
+- [AutomationSelenium/target/test-classes/BStackDemo.class](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/target/test-classes/BStackDemo.class)
+
+## Course11
+
+### Files Changed:
 - [AutomationSelenium/pom.xml](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/pom.xml)
 
 ## Course9
