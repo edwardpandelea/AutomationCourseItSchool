@@ -1,3 +1,21 @@
+## Course12
+
+### Files Changed:
+- [.idea/.gitignore](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/.idea/.gitignore)
+- [.idea/AutomationCourseItSchool.iml](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/.idea/AutomationCourseItSchool.iml)
+- [.idea/misc.xml](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/.idea/misc.xml)
+- [.idea/modules.xml](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/.idea/modules.xml)
+- [.idea/vcs.xml](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/.idea/vcs.xml)
+- [.idea/workspace.xml](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/.idea/workspace.xml)
+- [AutomationSelenium/src/test/java/Course12/Tests.java](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/src/test/java/Course12/Tests.java)
+- [AutomationSelenium/target/AutomationSelenium-1.0-SNAPSHOT.jar](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/target/AutomationSelenium-1.0-SNAPSHOT.jar)
+- [AutomationSelenium/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst)
+- [AutomationSelenium/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst)
+- [AutomationSelenium/target/surefire-reports/Course12.SearchTest.txt](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/target/surefire-reports/Course12.SearchTest.txt)
+- [AutomationSelenium/target/surefire-reports/TEST-Course12.SearchTest.xml](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/target/surefire-reports/TEST-Course12.SearchTest.xml)
+- [AutomationSelenium/target/test-classes/BStackDemo.class](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/target/test-classes/BStackDemo.class)
+- [AutomationSelenium/target/test-classes/Course12/Tests.class](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/target/test-classes/Course12/Tests.class)
+
 ## Course11
 
 ### Files Changed:
