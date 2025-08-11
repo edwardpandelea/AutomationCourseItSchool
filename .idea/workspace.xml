@@ -5,20 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e4a195a-5ad1-4b54-960a-bec88381e5dd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/AutomationCourseItSchool.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AutomationSelenium/target/AutomationSelenium-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/AutomationSelenium/target/AutomationSelenium-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AutomationSelenium/src/test/java/Course14/Magento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AutomationSelenium/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AutomationSelenium/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AutomationSelenium/target/AutomationSelenium-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AutomationSelenium/target/maven-archiver/pom.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/AutomationSelenium/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/AutomationSelenium/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AutomationSelenium/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/AutomationSelenium/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AutomationSelenium/target/test-classes/BStackDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/AutomationSelenium/target/test-classes/BStackDemo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AutomationSelenium/target/surefire-reports/Course12.SearchTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AutomationSelenium/target/surefire-reports/TEST-Course12.SearchTest.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,6 +53,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.Magento.TestCos.executor": "Run",
+    "JUnit.Magento.executor": "Run",
+    "JUnit.Magento.test.executor": "Run",
     "JUnit.Tests.addToFavorite.executor": "Run",
     "JUnit.Tests.verificareFiltre.executor": "Run",
     "Maven.AutomationSelenium [clean].executor": "Run",
@@ -53,11 +63,14 @@
     "Maven.AutomationSelenium [install].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Course14",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -66,12 +79,59 @@
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "junie.application.models",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.Tests">
+  <component name="RunManager" selected="JUnit.Magento">
+    <configuration name="Magento" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AutomationSelenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Course14.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Course14" />
+      <option name="MAIN_CLASS_NAME" value="Course14.Magento" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Magento.placeOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AutomationSelenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Course14.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Course14" />
+      <option name="MAIN_CLASS_NAME" value="Course14.Magento" />
+      <option name="METHOD_NAME" value="placeOrder" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Magento.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AutomationSelenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Course14.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Course14" />
+      <option name="MAIN_CLASS_NAME" value="Course14.Magento" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="AutomationSelenium" />
       <extension name="coverage">
@@ -83,22 +143,6 @@
       <option name="PACKAGE_NAME" value="Course12" />
       <option name="MAIN_CLASS_NAME" value="Course12.Tests" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Tests.addToFavorite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AutomationSelenium" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Course12.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Course12" />
-      <option name="MAIN_CLASS_NAME" value="Course12.Tests" />
-      <option name="METHOD_NAME" value="addToFavorite" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -121,17 +165,22 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Magento" />
+        <item itemvalue="JUnit.Magento.placeOrder" />
+        <item itemvalue="JUnit.Magento.test" />
         <item itemvalue="JUnit.Tests" />
         <item itemvalue="JUnit.Tests.verificareFiltre" />
-        <item itemvalue="JUnit.Tests.addToFavorite" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SeleniumInternalSettingsState">
+    <option name="lastUrl" value="https://magento.softwaretestingboard.com/checkout/onepage/success/" />
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.27812.49" />
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.27812.49" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
       </set>
     </attachedChunks>
   </component>
@@ -144,10 +193,16 @@
       <updated>1753894258956</updated>
       <workItem from="1753894260455" duration="320000" />
       <workItem from="1753894588204" duration="2918000" />
+      <workItem from="1754925872618" duration="449000" />
+      <workItem from="1754926421027" duration="8997000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
