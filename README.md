@@ -1,3 +1,19 @@
+## Course14
+
+### Files Changed:
+- [.idea/workspace.xml](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/.idea/workspace.xml)
+- [AutomationSelenium/pom.xml](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/pom.xml)
+- [AutomationSelenium/src/test/java/Course14/Magento.java](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/src/test/java/Course14/Magento.java)
+- [AutomationSelenium/target/AutomationSelenium-1.0-SNAPSHOT.jar](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/target/AutomationSelenium-1.0-SNAPSHOT.jar)
+- [AutomationSelenium/target/maven-archiver/pom.properties](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/target/maven-archiver/pom.properties)
+- [AutomationSelenium/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst)
+- [AutomationSelenium/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst)
+- [AutomationSelenium/target/surefire-reports/2025-08-11T20-43-02_320-jvmRun1.dump](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/target/surefire-reports/2025-08-11T20-43-02_320-jvmRun1.dump)
+- [AutomationSelenium/target/surefire-reports/2025-08-11T20-43-02_320-jvmRun1.dumpstream](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/target/surefire-reports/2025-08-11T20-43-02_320-jvmRun1.dumpstream)
+- [AutomationSelenium/target/surefire-reports/Course12.SearchTest.txt](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/target/surefire-reports/Course12.SearchTest.txt)
+- [AutomationSelenium/target/surefire-reports/TEST-Course12.SearchTest.xml](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/target/surefire-reports/TEST-Course12.SearchTest.xml)
+- [AutomationSelenium/target/test-classes/Course14/Magento.class](https://github.com/edwardpandelea/AutomationCourseItSchool/blob/master/AutomationSelenium/target/test-classes/Course14/Magento.class)
+
 ## Course12
 
 ### Files Changed:
